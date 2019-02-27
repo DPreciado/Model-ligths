@@ -1,4 +1,4 @@
-﻿Shader "Unlit/Basic Lambert"
+﻿Shader "Custom/Basic Lambert"
 {
 	Properties
 	{
