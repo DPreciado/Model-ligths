@@ -6,7 +6,7 @@
 		_Albedo("Albedo", Color) = (1,1,1,1)
 		_RampTex("Ramp Texture", 2D) = "white"{}
 		_OutlineColor("Otline Color", Color) = (0, 0, 0, 1)
-		_OutlineSize("Outline Size", Range(0.001, 0.1)) = 0.05
+		_OutlineSize("Outline Size", Range(0.001, 0.7)) = 0.05
 	}
 
 	SubShader
@@ -43,6 +43,8 @@
 
 		Pass
 		{
+			Cull Front
+
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -67,10 +69,19 @@
 			v2f vert(appdata v)
 			{
 				v2f o;
-				o.pos = UnityIbjectToClipPos(v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				
 				float3 norm = normalize(mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal));
-				return 0;
+				float2 offset = TransformViewToProjection(norm.xy);
+
+				o.pos.xy +=offset * o.pos.z * _OutlineSize;
+				o.Color = _OutlineColor;
+				return o;
+			}
+
+			fixed4 frag(v2f i) : SV_Target
+			{
+				return i.Color;
 			}
 
 			ENDCG
