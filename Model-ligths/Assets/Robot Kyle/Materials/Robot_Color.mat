@@ -4,10 +4,11 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Robot_Color
-  m_Shader: {fileID: 4800000, guid: 668fb999d439bc1429f7cb00611d95bd, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2faceef134e65bd4ab14822d10029d9a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -22,6 +23,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 94c473c9137744d7eabd829f1150da8d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BumpTex:
+        m_Texture: {fileID: 2800000, guid: 94c473c9137744d7eabd829f1150da8d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 0a0e8af2869fa45f78e25460db578482, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -30,7 +35,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 13d60e731ca8e2f4bb98b1a999050520, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - _NormalAmount: 0.93
+    - _OutlineSize: 0.51
     m_Colors:
     - _Albedo: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
