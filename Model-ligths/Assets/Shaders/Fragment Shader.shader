@@ -9,6 +9,8 @@
 		_NormalAmount("Normal Amount", Range(-3, 3)) = 1
 		_OutlineColor("Otline Color", Color) = (0, 0, 0, 1)
 		_OutlineSize("Outline Size", Range(0.001, 0.7)) = 0.05
+		_RimColor ("Rim Color", Color) = (0.26,0.19,0.16,0.0)
+      	_RimPower ("Rim Power", Range(0.5,20.0)) = 3.0
 	}
 
 	SubShader
@@ -19,6 +21,7 @@
 		float4 _Albedo;
 		sampler2D _MainTex;
 		sampler2D _RampTex;
+		sampler2D _BumpTex;
 		float _NormalAmount;
 		float4 _RimColor;
 		float _RimPower;
